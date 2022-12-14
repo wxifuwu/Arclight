@@ -10,14 +10,6 @@ export interface SlashCommand {
     cooldown?: number // in seconds
 }
 
-export interface Command {
-    name: string,
-    execute: (message: Message, args: Array<string>, client: Client) => void,
-    permissions: Array<PermissionResolvable>,
-    aliases: Array<string>,
-    cooldown?: number,
-}
-
 export interface Button {
     id: string,
     execute: (Interaction: ButtonInteraction, client: Client) => void,
@@ -61,7 +53,6 @@ declare global {
 declare module "discord.js" {
     export interface Client {
         slashCommands: Collection<string, SlashCommand>
-        commands: Collection<string, Command>,
         buttons: Collection<string, Button>,
         cooldowns: Collection<string, number>,
         modals: Collection<string, Modal>

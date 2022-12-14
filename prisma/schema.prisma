@@ -9,3 +9,13 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+
+model Warning {
+  id BigInt @id @unique @default(autoincrement())
+  userID String
+  reason String
+  moderator String
+  comment String @default("")
+  time DateTime @default(now())
+}
+

@@ -6,12 +6,12 @@ const logger = new Signale({
     disabled: false,
     interactive: false,
     logLevel: "info",
-    scope: 'Babylon',
+    scope: 'Arclight',
     secrets: [],
     stream: process.stdout,
     types: {
         success: {
-            badge: figureSet.tick,
+            badge: figureSet.heart,
             color: 'green',
             label: 'success',
             logLevel: 'info'
