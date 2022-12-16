@@ -10,12 +10,7 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Warning {
-  id BigInt @id @unique @default(autoincrement())
-  userID String
-  reason String
-  moderator String
-  comment String @default("")
-  time DateTime @default(now())
+model captchaConfig {
+  guildID String @id @unique
+  memberRoleID String
 }
-

@@ -1,9 +1,9 @@
-# Zuul 
+# Arclight - Anti Raid & Captchas 
 
 <hr/>
 
 <p align="center"> 
-A customized, single guild version of the Arclight moderation and utility bot to serve the anemoia server.
+Arclight is a raid prevention, risk analysis and server safety bot. <br/> <br/> Some of its features include additional verification steps for all new accounts, an account age warning, join logging, invite management and a lot more!
 </p>
 
 <hr/>

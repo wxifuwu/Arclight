@@ -13,6 +13,7 @@ client.slashCommands = new Collection<string, SlashCommand>()
 client.cooldowns = new Collection<string, number>();
 client.buttons = new Collection<string, Button>();
 client.modals = new Collection<string, Modal>();
+client.codes = new Collection<string, number>();
 
 // --- Require Handlers ---
 const handlersDir = join(__dirname, "./handlers")

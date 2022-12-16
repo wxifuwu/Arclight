@@ -55,6 +55,7 @@ declare module "discord.js" {
         slashCommands: Collection<string, SlashCommand>
         buttons: Collection<string, Button>,
         cooldowns: Collection<string, number>,
-        modals: Collection<string, Modal>
+        modals: Collection<string, Modal>,
+        codes: Collection<string, number>,
     }
 }
