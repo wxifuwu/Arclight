@@ -13,15 +13,15 @@ const command : SlashCommand = {
     .setDefaultMemberPermissions(PermissionFlagsBits.Administrator)
     ,
     execute: async (interaction, client) => {
-        if(interaction.options.getSubcommand() !== "setup" || !interaction.options.getSubcommand) return interaction.reply({ content: "This command is outdated, please reload your Discord client"});
+        if(interaction.options.getSubcommand() !== "setup" || !interaction.options.getSubcommand) return interaction.reply({ content: "This command is outdated, please reload your Discord client", ephemeral: true});
 
-        if(!interaction.guild) return interaction.reply({ content: "This command can only be used in a server!"});
+        if(!interaction.guild) return interaction.reply({ content: "This command can only be used in a server!", ephemeral: true });
 
         let chan = await interaction.guild.channels.fetch(interaction.options.getChannel("channel", true).id);
-        if(!chan || chan.type !== ChannelType.GuildText) return interaction.reply({ content: "Please select a valid text channel!"});
+        if(!chan || chan.type !== ChannelType.GuildText) return interaction.reply({ content: "Please select a valid text channel!", ephemeral: true });
 
         let role = await interaction.guild.roles.fetch(interaction.options.getRole("member_role", true).id);
-        if(!client.user) return interaction.reply({ content: "An error occured!"});
+        if(!client.user) return interaction.reply({ content: "An error occured!", ephemeral: true });
         let botuser = await interaction.guild.members.fetchMe(); // TODO: Improve?
         if(!role || role.position > botuser.roles.highest.position) return interaction.reply({ content: "Using this role as the member role isn't possible. Please pick a role below the bots highest role!", ephemeral: true });
 
