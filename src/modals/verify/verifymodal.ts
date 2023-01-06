@@ -36,6 +36,7 @@ const modal: Modal = {
             try {
                 let user = await interaction.guild.members.fetch(interaction.member.user.id);
                 user.roles.add(Role);
+                client.codes.delete(`verify-${interaction.member.user.id}`);
                 interaction.reply({ content: "You've been verified!", ephemeral: true});
             } catch(e) {
                 logger.error(`Issue adding role: ${e}`);

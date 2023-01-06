@@ -11,7 +11,7 @@ const button: Button = {
             let pin = await generatePin();
 
             const modal = new ModalBuilder().setCustomId("verify-modal").setTitle(`Verify Pin: ${pin}`);
-            const input = new TextInputBuilder().setCustomId("pincode").setMaxLength(4).setLabel(`Please type your verify pin: ${pin}`).setPlaceholder(`${pin}`).setStyle(TextInputStyle.Short);
+            const input = new TextInputBuilder().setCustomId("pincode").setMaxLength(6).setLabel(`Please type your verify pin: ${pin}`).setPlaceholder(`${pin}`).setStyle(TextInputStyle.Short);
 
             const inputRow = new ActionRowBuilder<ModalActionRowComponentBuilder>().addComponents(input);
             modal.addComponents(inputRow);

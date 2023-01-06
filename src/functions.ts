@@ -35,5 +35,5 @@ export const isOwnInvite = async (guild: Guild, code: string) : Promise<boolean>
 }
 
 export const generatePin = () => {
-    return Math.floor(Math.random() * 9000) + 1000;
+    return Math.floor(Math.random() * 900000) + 100000;
 }
