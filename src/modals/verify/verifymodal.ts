@@ -7,7 +7,7 @@ const modal: Modal = {
     execute: async (interaction, client) => {
         if(!interaction.guild || !interaction.member) return;
 
-        let cachedRoleID = await redisClient.get(`captcharole-${interaction.guild.id}`);
+        let cachedRoleID = await redisClient.get(`captcharole-${interaction.guild.id}`).catch(e => logger.error(`Redis DB Error: ${e}`));
         let roleID: string;
         if(!cachedRoleID) {
             let data = await prisma.captchaConfig.findUnique({
@@ -36,6 +36,7 @@ const modal: Modal = {
             try {
                 let user = await interaction.guild.members.fetch(interaction.member.user.id);
                 user.roles.add(Role);
+                client.codes.delete(`verify-${interaction.member.user.id}`);
                 interaction.reply({ content: "You've been verified!", ephemeral: true});
             } catch(e) {
                 logger.error(`Issue adding role: ${e}`);

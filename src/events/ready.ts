@@ -10,8 +10,8 @@ const event : BotEvent = {
         client.user?.setPresence({
             activities: [
                 {
-                    name: `to ${process.env.PREFIX}help`,
-                    type: ActivityType.Listening
+                    name: `with verification <3`,
+                    type: ActivityType.Playing
                 }
             ],
             status: "dnd"
