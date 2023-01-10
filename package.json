@@ -7,7 +7,7 @@
   "scripts": {
     "build": "rm -Rf build && swc src --out-dir build",
     "start": "clear && node build/index.js",
-    "server": "swc src --out-dir build` && node build/index.js",
+    "server": "swc src --out-dir build && node build/index.js",
     "migrate": "prisma db push && prisma generate"
   },
   "keywords": [],
